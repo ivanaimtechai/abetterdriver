@@ -32,8 +32,30 @@ export default function WinBanner() {
 
               <div className="flex items-center gap-3 justify-center sm:justify-start">
                 <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-7 h-4" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 18 Q 20 4, 40 12 T 58 18" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" fill="none" />
+                  {/* Road icon — perspective road with dashed center line */}
+                  <svg
+                    className="w-7 h-7"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    {/* Road surface (trapezoid in perspective) */}
+                    <path
+                      d="M9 28 L14 4 L18 4 L23 28 Z"
+                      fill="#2563eb"
+                      fillOpacity="0.18"
+                      stroke="#2563eb"
+                      strokeWidth="1.5"
+                      strokeLinejoin="round"
+                    />
+                    {/* Dashed center line */}
+                    <path
+                      d="M16 6 L16 10 M16 14 L16 18 M16 22 L16 26"
+                      stroke="#2563eb"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
                   </svg>
                 </div>
                 <div>
