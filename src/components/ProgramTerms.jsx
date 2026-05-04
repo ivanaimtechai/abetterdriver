@@ -10,16 +10,19 @@ const terms = [
 
 export default function ProgramTerms() {
   return (
-    <section className="py-12 lg:py-16 bg-white">
-      <div className="container-custom">
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 text-center mb-10">
+    <section className="py-5 py-lg-6 bg-white" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
+      <div className="container">
+        <h3 className="fw-bolder text-brand-slate-900 text-center mb-5"
+            style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
           Program Terms
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="row g-4 mx-auto" style={{ maxWidth: '64rem' }}>
           {terms.map((term, idx) => (
-            <div key={idx} className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-slate-600 leading-relaxed">{term}</p>
+            <div key={idx} className="col-12 col-sm-6 col-lg-3">
+              <div className="d-flex align-items-start gap-2">
+                <CheckCircle2 size={20} className="text-brand-blue flex-shrink-0" style={{ marginTop: '.125rem' }} />
+                <p className="small text-brand-slate-600 mb-0" style={{ lineHeight: 1.6 }}>{term}</p>
+              </div>
             </div>
           ))}
         </div>

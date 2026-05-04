@@ -24,21 +24,22 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 lg:py-20 bg-white">
-      <div className="container-custom">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+    <section id="how-it-works" className="py-5 py-lg-6 bg-white" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
+      <div className="container">
+        <div className="text-center mb-5">
+          <h2 className="fw-bolder text-brand-slate-900 mb-2" style={{ fontSize: 'clamp(1.875rem, 3.5vw, 2.5rem)' }}>
             How It Works
           </h2>
-          <p className="text-base sm:text-lg text-slate-500">
+          <p className="text-brand-slate-500" style={{ fontSize: '1.125rem' }}>
             It only takes a few simple steps.
           </p>
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-4">
+        <div className="position-relative row g-4">
           {/* Dotted connector lines (desktop only) */}
-          <div className="hidden md:block absolute top-[78px] left-[16.66%] right-[16.66%] h-px pointer-events-none">
-            <div className="grid grid-cols-2 h-full">
+          <div className="d-none d-md-block position-absolute pointer-events-none"
+               style={{ top: '78px', left: '16.66%', right: '16.66%', height: '1px' }}>
+            <div className="d-grid h-100" style={{ gridTemplateColumns: '1fr 1fr' }}>
               <div className="dotted-line"></div>
               <div className="dotted-line"></div>
             </div>
@@ -47,26 +48,27 @@ export default function HowItWorks() {
           {steps.map((step) => {
             const Icon = step.icon
             return (
-              <div
-                key={step.num}
-                className="relative bg-white border border-slate-100 rounded-2xl p-6 lg:p-8 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="flex justify-center mb-5">
-                  <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center">
-                    <Icon className="w-9 h-9 text-blue-600" strokeWidth={2} />
+              <div key={step.num} className="col-md-4">
+                <div className="position-relative bg-white border rounded-2xl p-4 p-lg-5 text-center card-lift h-100">
+                  <div className="d-flex justify-content-center mb-4">
+                    <div className="rounded-circle bg-brand-blue-50 d-flex align-items-center justify-content-center"
+                         style={{ width: '5rem', height: '5rem' }}>
+                      <Icon size={36} className="text-brand-blue" strokeWidth={2} />
+                    </div>
                   </div>
+                  <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <span className="rounded-circle text-white small fw-bold d-flex align-items-center justify-content-center"
+                          style={{ width: '1.75rem', height: '1.75rem', backgroundColor: 'var(--brand-blue-600)' }}>
+                      {step.num}
+                    </span>
+                    <h3 className="fw-bold text-brand-slate-900 mb-0" style={{ fontSize: '1.25rem' }}>
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p className="text-brand-slate-500 mb-0 mx-auto" style={{ maxWidth: '20rem', lineHeight: 1.6 }}>
+                    {step.description}
+                  </p>
                 </div>
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <span className="w-7 h-7 rounded-full bg-blue-600 text-white text-sm font-bold flex items-center justify-center">
-                    {step.num}
-                  </span>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    {step.title}
-                  </h3>
-                </div>
-                <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">
-                  {step.description}
-                </p>
               </div>
             )
           })}

@@ -3,76 +3,60 @@ import { DollarSign, User } from 'lucide-react'
 
 export default function WinBanner() {
   return (
-    <section className="py-8 lg:py-12 bg-white">
-      <div className="container-custom">
-        <div className="bg-blue-50/60 rounded-2xl p-6 lg:p-8">
-          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+    <section className="py-4 py-lg-5 bg-white">
+      <div className="container">
+        <div className="bg-brand-blue-soft rounded-2xl p-4 p-lg-5">
+          <div className="d-flex flex-column flex-lg-row align-items-center gap-4">
             {/* Icon + Headline */}
-            <div className="flex items-center gap-4 lg:flex-shrink-0">
-              <div className="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
-                <DollarSign className="w-7 h-7 text-green-600" strokeWidth={2.5} />
+            <div className="d-flex align-items-center gap-3 flex-shrink-0">
+              <div className="rounded-circle bg-brand-green-tint d-flex align-items-center justify-content-center flex-shrink-0"
+                   style={{ width: '3.5rem', height: '3.5rem' }}>
+                <DollarSign size={28} className="text-brand-green" strokeWidth={2.5} />
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 whitespace-nowrap">
+              <h3 className="fw-bolder text-brand-slate-900 mb-0 text-nowrap" style={{ fontSize: '1.5rem' }}>
                 A Win for Everyone!
               </h3>
             </div>
 
             {/* Benefits */}
-            <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-3 w-full">
-              <div className="flex items-center gap-3 justify-center sm:justify-start">
-                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <User className="w-6 h-6 text-green-600" strokeWidth={2} />
+            <div className="flex-grow-1 row g-3 w-100">
+              <div className="col-12 col-sm-4 d-flex align-items-center gap-3 justify-content-center justify-content-sm-start">
+                <div className="rounded-circle bg-brand-green-soft d-flex align-items-center justify-content-center flex-shrink-0"
+                     style={{ width: '3rem', height: '3rem' }}>
+                  <User size={24} className="text-brand-green" strokeWidth={2} />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-600 font-medium">They Save</p>
-                  <p className="font-bold text-green-600 text-base">15% OFF</p>
-                  <p className="text-xs text-slate-500">on their course</p>
+                  <p className="small text-brand-slate-600 fw-medium mb-0">They Save</p>
+                  <p className="fw-bold text-brand-green mb-0">15% OFF</p>
+                  <p className="text-brand-slate-500 mb-0" style={{ fontSize: '.75rem' }}>on their course</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 justify-center sm:justify-start">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+              <div className="col-12 col-sm-4 d-flex align-items-center gap-3 justify-content-center justify-content-sm-start">
+                <div className="rounded-circle bg-brand-blue-100 d-flex align-items-center justify-content-center flex-shrink-0"
+                     style={{ width: '3rem', height: '3rem' }}>
                   {/* Road icon — perspective road with dashed center line */}
-                  <svg
-                    className="w-7 h-7"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    {/* Road surface (trapezoid in perspective) */}
-                    <path
-                      d="M9 28 L14 4 L18 4 L23 28 Z"
-                      fill="#2563eb"
-                      fillOpacity="0.18"
-                      stroke="#2563eb"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                    />
-                    {/* Dashed center line */}
-                    <path
-                      d="M16 6 L16 10 M16 14 L16 18 M16 22 L16 26"
-                      stroke="#2563eb"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9 28 L14 4 L18 4 L23 28 Z" fill="#2563eb" fillOpacity="0.18" stroke="#2563eb" strokeWidth="1.5" strokeLinejoin="round" />
+                    <path d="M16 6 L16 10 M16 14 L16 18 M16 22 L16 26" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-600 font-medium">We Gain</p>
-                  <p className="font-bold text-slate-900 text-base">a new happy</p>
-                  <p className="text-xs text-slate-500">customer</p>
+                  <p className="small text-brand-slate-600 fw-medium mb-0">We Gain</p>
+                  <p className="fw-bold text-brand-slate-900 mb-0">a new happy</p>
+                  <p className="text-brand-slate-500 mb-0" style={{ fontSize: '.75rem' }}>customer</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 justify-center sm:justify-start">
-                <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-extrabold text-sm">$10</span>
+              <div className="col-12 col-sm-4 d-flex align-items-center gap-3 justify-content-center justify-content-sm-start">
+                <div className="rounded-circle bg-brand-green-500 d-flex align-items-center justify-content-center flex-shrink-0"
+                     style={{ width: '3rem', height: '3rem' }}>
+                  <span className="text-white fw-bolder small">$10</span>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-600 font-medium">You Earn</p>
-                  <p className="font-bold text-green-600 text-base">$10</p>
-                  <p className="text-xs text-slate-500">for every referral</p>
+                  <p className="small text-brand-slate-600 fw-medium mb-0">You Earn</p>
+                  <p className="fw-bold text-brand-green mb-0">$10</p>
+                  <p className="text-brand-slate-500 mb-0" style={{ fontSize: '.75rem' }}>for every referral</p>
                 </div>
               </div>
             </div>
