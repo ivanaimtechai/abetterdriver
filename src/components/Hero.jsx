@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link2, Play, ShieldCheck } from 'lucide-react'
+import heroImage from '../image.png_202605050219.jpeg'
 
 export default function Hero() {
   return (
@@ -41,7 +42,7 @@ export default function Hero() {
           <div className="order-1 lg:order-2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1583912267550-d6c2ac3196c0?auto=format&fit=crop&w=1200&q=80"
+                src={heroImage}
                 alt="Happy friends enjoying a road trip"
                 className="w-full h-full object-cover"
                 loading="eager"
